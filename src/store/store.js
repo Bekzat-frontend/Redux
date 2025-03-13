@@ -18,3 +18,19 @@
 // const store = createStore(counterReducer);
 
 // export default store;
+
+import { createStore } from "redux";
+
+const innitial = {
+  todos: [],
+};
+
+const itemsReducer = (state = innitial, action) => {
+  switch (action.type) {
+    case "createTod":
+      return { ...state, todos: [...state.todos.action.payload] };
+    default:
+      return state;
+  }
+};
+const store = createStore(itemsReducer);

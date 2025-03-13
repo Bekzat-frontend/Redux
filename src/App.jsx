@@ -20,4 +20,34 @@
 // }
 
 // export default App;
-  
+
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+function App() {
+  const [btn, setBtn] = useState("");
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
+
+  const addTodo = () => {
+    if (btn.trim() !== "") {
+      dispatch({ type: "createTod" });
+      setBtn("");
+    }
+  };
+
+  return (
+    <div>
+      <h1>Todo List</h1>
+      <input
+        type="text"
+        placeholder="Жаңы тапшырма..."
+        value={btn}
+        onChange={(e) => setBtn(e.target.value)}
+      />
+      <button>add</button>
+    </div>
+  );
+}
+
+export default App;
