@@ -31,7 +31,7 @@ function App() {
 
   const addTodo = () => {
     if (btn.trim() !== "") {
-      dispatch({ type: "createTod" });
+      dispatch({ type: "ADD_TODO", payload: btn });
       setBtn("");
     }
   };
@@ -45,9 +45,16 @@ function App() {
         value={btn}
         onChange={(e) => setBtn(e.target.value)}
       />
-      <button>add</button>
+      <button onClick={addTodo}>add</button>
+      {todos.map((items, index) => (
+        <div key={index}>
+          <span>{items}</span>
+          <button>click</button>
+        </div>
+      ))}
     </div>
   );
 }
+const StyledDiv=sty
 
 export default App;

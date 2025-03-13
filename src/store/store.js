@@ -27,10 +27,12 @@ const innitial = {
 
 const itemsReducer = (state = innitial, action) => {
   switch (action.type) {
-    case "createTod":
-      return { ...state, todos: [...state.todos.action.payload] };
+    case "ADD_TODO":
+      return { ...state, todos: [...state.todos, action.payload] };
+
     default:
       return state;
   }
 };
 const store = createStore(itemsReducer);
+export default store;
