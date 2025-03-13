@@ -54,7 +54,18 @@ function App() {
         onChange={(e) => setBtn(e.target.value)}
       />
       <StyledButton onClick={addTodo}>Add</StyledButton>
-      <button onClick={removeTodo}>click</button>
+      <button
+        onClick={removeTodo}
+        style={{
+          background: "#23cae0",
+          marginLeft: "10px",
+          color: "white",
+          padding: "3px 15px",
+          border: "none",
+        }}
+      >
+        remove
+      </button>
       {todos.map((item, index) => (
         <StyledDiv key={index}>
           <span>{item}</span>
@@ -87,7 +98,7 @@ const StyledButton = styled.button`
 const StyledDiv = styled.div`
   width: 250px;
   height: 30px;
-  margin-left: 41%;
+  margin-left: 38%;
   background-color: #29bdf7;
   margin-top: 30px;
   display: flex;
