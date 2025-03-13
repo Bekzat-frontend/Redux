@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 function App() {
-  const store = createSelector((state) => state.store);
+  const store = useSelector((state) => state.store);
   const dispatch = useDispatch();
   const increament = () => {
     dispatch({ type: "increament" });
